@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello/widget/grid_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,7 +16,10 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.deepPurple,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push
+              (context, MaterialPageRoute(builder: (context) => GridWidget()));
+            },
             icon: Icon(
               Icons.menu,
               color: Colors.white,
