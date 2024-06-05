@@ -8,19 +8,46 @@ class StckbarWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 80, 99, 173),
-      appBar: AppBar(leading: IconButton(onPressed: (){
-
-        Navigator.push(context,MaterialPageRoute(builder: (context)=>HomePage()) );
-      }, icon: Icon(Icons.add_business),),
-      title: Text("hello",style: TextStyle(color: const Color.fromARGB(255, 242, 246, 242),),
+      appBar: AppBar(
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomePage()));
+          },
+          icon: Icon(Icons.add_business),
+        ),
+        title: Text(
+          "hello",
+          style: TextStyle(
+            color: const Color.fromARGB(255, 242, 246, 242),
+          ),
+        ),
+        centerTitle: true,
+        elevation: 6,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
+        backgroundColor: Colors.blue,
       ),
-      centerTitle: true,
-      elevation: 6,
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(6)),
-      backgroundColor: Colors.blue,),
       body: Container(
-        child: ElevatedButton(onPressed: (){}, child: Center(child: Text("click here"))),
-        color: Colors.red,
+        child: ElevatedButton(
+          onPressed: () {
+            final snackbar = SnackBar(backgroundColor: Colors.red,
+            duration: Duration(milliseconds: 5),
+            
+
+
+
+            content: Text("something went to wrong"),);
+
+
+            ScaffoldMessenger.of(context).showSnackBar(snackbar);
+          },
+          child: Center(
+            child: Text("click here"),
+          ),
+          style: ButtonStyle(
+              overlayColor: WidgetStateProperty.all(Colors.amber),
+              backgroundColor: WidgetStateProperty.all(Colors.black)),
+        ),
       ),
     );
   }
