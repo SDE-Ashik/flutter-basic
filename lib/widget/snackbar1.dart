@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello/widget/dissmisbile.dart';
 import 'package:hello/widget/listview1.dart';
 
 class StckbarWidget extends StatelessWidget {
@@ -12,7 +13,7 @@ class StckbarWidget extends StatelessWidget {
         leading: IconButton(
           onPressed: () {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomePage()));
+                context, MaterialPageRoute(builder: (context) =>DissmibileWidget()));
           },
           icon: Icon(Icons.exit_to_app),
         ),
