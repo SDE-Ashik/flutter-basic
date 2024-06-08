@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -24,14 +25,28 @@ class ImageWidget extends StatelessWidget {
           child: Container(
         height: 300,
         width: 250,
-        decoration: BoxDecoration(boxShadow: const [
-          BoxShadow(blurRadius:30,
-          blurStyle: BlurStyle.outer,spreadRadius: 5,
+       
+        // color: black,
+        child:Center(
+          child: CachedNetworkImage(fit: BoxFit.cover,
+          placeholderFadeInDuration:Duration(seconds: 1) ,
+        
+          
+            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM7AbaMX2Md4w6X4S43XfXRob-33elYMp5eGfKhKCef6c0EBfWUrxaro1xpgQu2cThPEM&usqp=CAU",
+          placeholder: (context, url) => CircularProgressIndicator(backgroundColor: black,
+          ),
+          errorWidget: (context, url, error) => Icon(Icons.error),
+          ),
+        ) ,
+        // decoration: BoxDecoration(boxShadow: const [
+        //   BoxShadow(blurRadius:30,
+        //   blurStyle: BlurStyle.outer,spreadRadius: 5,
 
-          color: black )
-        ],
-          borderRadius: BorderRadius.circular(30),
-          image: const DecorationImage(image: NetworkImage("https://c4.wallpaperflare.com/wallpaper/447/169/141/tv-show-ben-10-ben-tennyson-diamondhead-ben-10-wallpaper-preview.jpg"),fit:BoxFit.cover)),
+        //   color: black )
+        // ],
+        //   borderRadius: BorderRadius.circular(30),
+        //   image: const DecorationImage(image: AssetImage("assets/bmw_cartoon.jpeg")
+        //   ),),
        
       ),
       ),
