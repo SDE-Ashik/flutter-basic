@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hello/widget/drawer.dart';
+import 'package:hello/widget/image.dart';
 // import 'package:hello/widget/listview1.dart';
 
 void main() {
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
         
       ),
-      home: DrawerWidget()
+      home: ImageWidget()
     );
   }
 }
