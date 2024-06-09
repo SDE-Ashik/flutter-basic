@@ -1,6 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hello/widget/alert.dart';
 
 class ImageWidget extends StatelessWidget {
   const ImageWidget({super.key});
@@ -13,6 +15,16 @@ class ImageWidget extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
+        // actions: [
+        //   IconButton(
+        //       onPressed: () {
+        //         Navigator.push(context,
+        //             MaterialPageRoute(builder: (context) => AlertWidget(),
+        //             ),
+        //             );
+        //       },
+        //       icon: Icon(Icons.next_plan))
+        // ],
         centerTitle: true,
         title: const Text(
           "Image kiddos",
@@ -22,33 +34,33 @@ class ImageWidget extends StatelessWidget {
         backgroundColor: black,
       ),
       body: Center(
-          child: Container(
-        height: 300,
-        width: 250,
-       
-        // color: black,
-        child:Center(
-          child: CachedNetworkImage(fit: BoxFit.cover,
-          placeholderFadeInDuration:Duration(seconds: 1) ,
-        
-          
-            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM7AbaMX2Md4w6X4S43XfXRob-33elYMp5eGfKhKCef6c0EBfWUrxaro1xpgQu2cThPEM&usqp=CAU",
-          placeholder: (context, url) => CircularProgressIndicator(backgroundColor: black,
-          ),
-          errorWidget: (context, url, error) => Icon(Icons.error),
-          ),
-        ) ,
-        // decoration: BoxDecoration(boxShadow: const [
-        //   BoxShadow(blurRadius:30,
-        //   blurStyle: BlurStyle.outer,spreadRadius: 5,
+        child: Container(
+          height: 300,
+          width: 250,
 
-        //   color: black )
-        // ],
-        //   borderRadius: BorderRadius.circular(30),
-        //   image: const DecorationImage(image: AssetImage("assets/bmw_cartoon.jpeg")
-        //   ),),
-       
-      ),
+          // color: black,
+          child: Center(
+            child: CachedNetworkImage(
+              fit: BoxFit.cover,
+              placeholderFadeInDuration: Duration(seconds: 1),
+              imageUrl:
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM7AbaMX2Md4w6X4S43XfXRob-33elYMp5eGfKhKCef6c0EBfWUrxaro1xpgQu2cThPEM&usqp=CAU",
+              placeholder: (context, url) => CircularProgressIndicator(
+                backgroundColor: black,
+              ),
+              errorWidget: (context, url, error) => Icon(Icons.error),
+            ),
+          ),
+          // decoration: BoxDecoration(boxShadow: const [
+          //   BoxShadow(blurRadius:30,
+          //   blurStyle: BlurStyle.outer,spreadRadius: 5,
+
+          //   color: black )
+          // ],
+          //   borderRadius: BorderRadius.circular(30),
+          //   image: const DecorationImage(image: AssetImage("assets/bmw_cartoon.jpeg")
+          //   ),),
+        ),
       ),
       drawer: Drawer(
         backgroundColor: black,

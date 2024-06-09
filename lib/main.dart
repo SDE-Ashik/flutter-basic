@@ -1,4 +1,7 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
+import 'package:hello/widget/alert.dart';
 import 'package:hello/widget/drawer.dart';
 import 'package:hello/widget/image.dart';
 // import 'package:hello/widget/listview1.dart';
@@ -14,30 +17,26 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-        
-      ),
-      home: ImageWidget()
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+            appBarTheme: const AppBarTheme(
+                color: Color.fromARGB(255, 78, 240, 46),
+                centerTitle: true,
+                iconTheme: IconThemeData(color: Colors.white)),
+            primarySwatch: Colors.green,
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+            iconTheme: IconThemeData(
+                color: Color.fromARGB(255, 214, 10, 10), size: 30)),
+        darkTheme: ThemeData(
+          primaryColor: Colors.black38,
+        ),
+        home: const DefaultTabController(
+          length: 5,
+          initialIndex: 2,
+          child: AlertWidget(),
+        ));
   }
 }
 
