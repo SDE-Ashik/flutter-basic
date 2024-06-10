@@ -2,8 +2,9 @@ import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:hello/widget/alert.dart';
-import 'package:hello/widget/drawer.dart';
-import 'package:hello/widget/image.dart';
+import 'package:hello/widget/bottomsheet.dart';
+// import 'package:hello/widget/drawer.dart';
+// import 'package:hello/widget/image.dart';
 // import 'package:hello/widget/listview1.dart';
 
 void main() {
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
             primarySwatch: Colors.green,
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
-            iconTheme: IconThemeData(
+            iconTheme: const IconThemeData(
                 color: Color.fromARGB(255, 214, 10, 10), size: 30)),
         darkTheme: ThemeData(
           primaryColor: Colors.black38,
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         home: const DefaultTabController(
           length: 5,
           initialIndex: 2,
-          child: AlertWidget(),
+          child:BottomsheetWidget(),
         ));
   }
 }

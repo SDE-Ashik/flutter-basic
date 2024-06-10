@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:hello/widget/bottomsheet.dart';
 import 'package:hello/widget/image.dart';
 
 class AlertWidget extends StatelessWidget {
@@ -128,7 +129,7 @@ Future<void> _showMyDialog(BuildContext context) async {
           ),
           TextButton(
             onPressed: () {
-              Navigator.pop(context);
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const BottomsheetWidget()));
             },
             child: Text("Cancel",
             style: TextStyle(color: Colors.black,fontSize: 20,
