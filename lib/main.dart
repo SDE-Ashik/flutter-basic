@@ -1,8 +1,10 @@
-import 'dart:ffi';
+
 
 import 'package:flutter/material.dart';
 import 'package:hello/widget/alert.dart';
+import 'package:hello/widget/animated.dart';
 import 'package:hello/widget/bottomsheet.dart';
+import 'package:hello/widget/drawer.dart';
 // import 'package:hello/widget/drawer.dart';
 // import 'package:hello/widget/image.dart';
 // import 'package:hello/widget/listview1.dart';
@@ -33,11 +35,15 @@ class MyApp extends StatelessWidget {
         darkTheme: ThemeData(
           primaryColor: Colors.black38,
         ),
-        home: const DefaultTabController(
-          length: 5,
-          initialIndex: 2,
-          child:BottomsheetWidget(),
-        ));
+home:AnimatedTextWidget(),
+
+        // home: const DefaultTabController(
+        //   length: 5,
+        //   initialIndex: 2,
+        //   // child:BottomsheetWidget(),
+
+        // )
+        );
   }
 }
 
