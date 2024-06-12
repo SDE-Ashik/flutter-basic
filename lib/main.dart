@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:hello/widget/alert.dart';
 import 'package:hello/widget/animated.dart';
+import 'package:hello/widget/bootomnav.dart';
 import 'package:hello/widget/bottomsheet.dart';
 import 'package:hello/widget/drawer.dart';
 // import 'package:hello/widget/drawer.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         darkTheme: ThemeData(
           primaryColor: Colors.black38,
         ),
-home:AnimatedTextWidget(),
+home:const BottomNavWidget()
 
         // home: const DefaultTabController(
         //   length: 5,
