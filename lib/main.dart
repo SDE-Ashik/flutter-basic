@@ -6,6 +6,7 @@ import 'package:hello/widget/animated.dart';
 import 'package:hello/widget/bootomnav.dart';
 import 'package:hello/widget/bottomsheet.dart';
 import 'package:hello/widget/drawer.dart';
+import 'package:hello/widget/sample.dart';
 // import 'package:hello/widget/drawer.dart';
 // import 'package:hello/widget/image.dart';
 // import 'package:hello/widget/listview1.dart';
@@ -25,10 +26,10 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         theme: ThemeData(
             appBarTheme: const AppBarTheme(
-                color: Color.fromARGB(255, 78, 240, 46),
+                color: Color.fromARGB(255, 225, 175, 25),
                 centerTitle: true,
                 iconTheme: IconThemeData(color: Colors.white)),
-            primarySwatch: Colors.green,
+            // primarySwatch: Color.fromARGB(255, 218, 230, 218),
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
             useMaterial3: true,
             iconTheme: const IconThemeData(
@@ -36,7 +37,7 @@ class MyApp extends StatelessWidget {
         darkTheme: ThemeData(
           primaryColor: Colors.black38,
         ),
-home:const BottomNavWidget()
+home:const SampleCounter()
 
         // home: const DefaultTabController(
         //   length: 5,
