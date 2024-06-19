@@ -1,6 +1,6 @@
 // import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
-
+import 'package:hello/widget/whatsapp/profile.dart';
 
 class WhatsappHomePage extends StatefulWidget {
   const WhatsappHomePage({super.key});
@@ -11,8 +11,7 @@ class WhatsappHomePage extends StatefulWidget {
 
 class _WhatsappHomePageState extends State<WhatsappHomePage> {
   int selectedindex = 0;
-  
-  
+
   List<Widget> widgets = [
     const Text("chats"),
     const Text("Updates"),
@@ -59,7 +58,6 @@ class _WhatsappHomePageState extends State<WhatsappHomePage> {
               color: Colors.white,
             ),
           ),
-
           PopupMenuButton<String>(
             icon: const Icon(
               Icons.more_vert,
@@ -108,23 +106,30 @@ class _WhatsappHomePageState extends State<WhatsappHomePage> {
                 //     title: Text("Settings"),
                 //   ),
                 // ),
-                const PopupMenuItem<String>(
+                PopupMenuItem<String>(
                   value: 'Settings',
                   child: ListTile(
                     horizontalTitleGap: 0,
 
-                    leading: Icon(
+                    leading: const Icon(
                       Icons.fiber_manual_record,
                       color: Colors.green,
                       size: 10,
                     ),
-                    contentPadding: EdgeInsets.symmetric(
+                    contentPadding: const EdgeInsets.symmetric(
                         horizontal: 0), // Adjust horizontal padding
 
-                    title: Text(
+                    title: const Text(
                       "Settings",
                       textAlign: TextAlign.left,
                     ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProfileWidget()),
+                      );
+                    },
                   ),
                 ),
               ];
@@ -135,8 +140,6 @@ class _WhatsappHomePageState extends State<WhatsappHomePage> {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
           ),
-
-        
         ],
       ),
       body: ListView.separated(
@@ -255,7 +258,6 @@ class _WhatsappHomePageState extends State<WhatsappHomePage> {
             }
           },
           itemCount: 11),
-
       bottomNavigationBar: BottomNavigationBar(
         // type:BottomNavigationBarType.shifting ,
 
@@ -313,4 +315,3 @@ class _WhatsappHomePageState extends State<WhatsappHomePage> {
     );
   }
 }
-

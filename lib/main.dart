@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello/widget/whatsapp/profile.dart';
 import 'package:hello/widget/whatsapp/whatsapp_home.dart';
 
 
@@ -26,10 +27,13 @@ class MyApp extends StatelessWidget {
     return  MaterialApp(
       theme:   ThemeData(iconTheme:  const IconThemeData(
         color: Color.fromARGB(255, 255, 255, 255),
+
         
-      )),
+      ),
+      iconButtonTheme: IconButtonThemeData(style: ButtonStyle(iconColor: WidgetStateProperty.all(Colors.white)))),
       
         debugShowCheckedModeBanner: false,
+        // home: const ProfileWidget(),
         
         home: const WhatsappHomePage()
         // )
