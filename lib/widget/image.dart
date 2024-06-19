@@ -71,8 +71,7 @@ class ImageWidget extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 50,
-                    backgroundImage: NetworkImage(
-                        "https://upload.wikimedia.org/wikipedia/commons/e/ec/Larry_Page_in_the_European_Parliament%2C_17.06.2009_%28cropped%29.jpg"),
+                    backgroundImage: NetworkImage()
                   ),
                   SizedBox(
                     width: 20,
