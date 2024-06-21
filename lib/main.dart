@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:hello/widget/form.dart';
+import 'package:hello/widget/whatsapp/loginpage.dart';
 import 'package:hello/widget/whatsapp/profile.dart';
 import 'package:hello/widget/whatsapp/whatsapp_home.dart';
 
@@ -15,6 +17,7 @@ import 'package:hello/widget/whatsapp/whatsapp_home.dart';
 // import 'package:hello/widget/listview1.dart';
 
 void main() {
+  
   runApp(const MyApp());
 }
 
@@ -33,10 +36,17 @@ class MyApp extends StatelessWidget {
       iconButtonTheme: IconButtonThemeData(style: ButtonStyle(iconColor: WidgetStateProperty.all(Colors.white)))),
       
         debugShowCheckedModeBanner: false,
-        // home: const ProfileWidget(),
+        home:  PageForm1(),
+        // home: const LoginPage(),
         
-        home: const WhatsappHomePage()
+        // home: const WhatsappHomePage()
         // )
         );
   }
 }
+
+
+
+
+
+

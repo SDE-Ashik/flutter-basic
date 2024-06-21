@@ -1,5 +1,6 @@
 // import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
+import 'package:hello/widget/whatsapp/chatpage.dart';
 import 'package:hello/widget/whatsapp/profile.dart';
 
 class WhatsappHomePage extends StatefulWidget {
@@ -211,7 +212,14 @@ class _WhatsappHomePageState extends State<WhatsappHomePage> {
               );
             }
             if (index == 3) {
-              return const ListTile(
+              return ListTile(
+                onTap: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (BuildContext context) {
+                    return ChatPage(name: "Ashik");
+                  }),
+                  );
+                },
                 leading: CircleAvatar(
                   radius: 30,
                   backgroundImage: AssetImage('assets/ashik.jpeg'),

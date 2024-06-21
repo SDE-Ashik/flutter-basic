@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class ProfileWidget extends StatefulWidget {
+class ProfileWidget extends StatelessWidget {
   const ProfileWidget({super.key});
 
-  @override
-  State<ProfileWidget> createState() => _ProfileWidgetState();
-}
-
-class _ProfileWidgetState extends State<ProfileWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,15 +57,44 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   SizedBox(
                     width: 5,
                   ),
-                  Icon(
-                    Icons.arrow_drop_down_circle,
-                    color: Color.fromARGB(255, 45, 230, 51),
+                  IconButton(
+                    onPressed: () {
+                      showModalBottomSheet(
+                      
+                        
+                          context: context,
+                          builder: (BuildContext context) {
+                           
+                            return Container(
+                              
+                              height:  MediaQuery.of(context).size.height * 0.25,
+                              child: Column(
+                                
+                                children: [
+                                  ListTile(leading: CircleAvatar(radius: 30,
+                                    backgroundColor: Colors.red,),
+                                    title: Text("Ashik",style: TextStyle( ),),
+                                    subtitle: Text("+91 8137845903"),
+                                    trailing: Icon(Icons.verified,color: Colors.green,),),
+                                    
+                                    
+                                    ListTile(contentPadding: EdgeInsets.only(left:30),
+                                      leading: Icon(Icons.add_circle_outline,size: 30,),
+                                    title: Text("Add account"),)
+                                ],
+                              ),
+                            );
+                          });
+                    },
+                    icon: Icon(
+                      Icons.arrow_drop_down_circle,
+                      color: Color.fromARGB(255, 45, 230, 51),
+                    ),
                   ),
                 ],
               ),
             ),
           ),
-          
           Expanded(
               child: ListView(
             physics: NeverScrollableScrollPhysics(),
@@ -177,12 +201,13 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 height: 3,
               ),
               Container(
-                  margin: EdgeInsets.only(left: 20),
-                  child: Text(
-                    "Also from Meta",
-                    style: TextStyle(fontWeight: FontWeight.w400),
-                  ),),
-                  Container(
+                margin: EdgeInsets.only(left: 20),
+                child: Text(
+                  "Also from Meta",
+                  style: TextStyle(fontWeight: FontWeight.w400),
+                ),
+              ),
+              Container(
                 child: ListTile(
                   leading: Icon(Icons.facebook_outlined),
                   title: Text(

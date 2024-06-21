@@ -37,8 +37,29 @@ dependencies:
   cupertino_icons: ^1.0.6
   cached_network_image: ^3.3.1
   animated_text_kit: ^4.2.2
+  emoji_picker_flutter: ^2.2.0
+  shared_preferences: ^2.2.3
+  flutter_launcher_icons: ^0.13.1
+  # flutter_native_splash: ^2.4.0
 
 dev_dependencies:
+
+  flutter_launcher_icons: "^0.13.1"
+  flutter_native_splash: ^2.4.0
+
+
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/logo.png"
+
+# flutter_native_splash:
+#    color: "#42a5f5"
+#    image: "assets/splash.png"
+   
+  
+  
   flutter_test:
     sdk: flutter
 
